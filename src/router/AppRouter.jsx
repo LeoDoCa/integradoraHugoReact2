@@ -7,6 +7,7 @@ import AuthContext from '../config/context/auth-context';
 import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements } from 'react-router-dom';
 import AdminLayout from '../components/layout/AdminLayout';
 import DashboardPage from '../modules/admin/user/DashboardPage';
+import ArchivosPage from '../modules/admin/user/ArchivosPage';
 
 
 const AppRouter = () => {
@@ -21,8 +22,8 @@ const AppRouter = () => {
                                 // routesFromRole(user?.roles[0]?.name)
                             }
                             <Route path='/' element={<>Dashboard</>} />
-                            <Route path='dashboard' element={<DashboardPage/>} />
-                            <Route path='users' element={<>Dashboard</>} />
+                            <Route path='upload' element={<DashboardPage/>} />
+                            <Route path='docs' element={<ArchivosPage />} />
                         </Route>
                     </>
                 ) : (

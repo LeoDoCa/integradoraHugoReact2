@@ -10,6 +10,7 @@ import {
   HiTable,
   HiUser,
 } from "react-icons/hi";
+import { IoDocumentSharp, IoDocumentsSharp } from "react-icons/io5";
 import Logo from "../../assets/google-docs.png";
 import AuthContext from "../../config/context/auth-context";
 import { useNavigate } from 'react-router-dom';
@@ -73,23 +74,23 @@ const AdminLayout = () => {
               <Sidebar.ItemGroup>
                 <li>
                   <Link
-                    to={"dashboard"}
+                    to={"upload"}
                     className="flex items-center justify-center rounded-lg p-2 text-base font-normal text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
                   >
-                    <HiChartPie className="h-6 w-6 flex-shrink-0 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
+                    <IoDocumentSharp className="h-6 w-6 flex-shrink-0 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
                     <span className="px-3 flex-1 whitespace-nowrap">
-                      Dashboard
+                      Subir archivo
                     </span>
                   </Link>
                 </li>
                 <li>
                   <Link
-                    to={"users"}
+                    to={"docs"}
                     className="flex items-center justify-center rounded-lg p-2 text-base font-normal text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
                   >
-                    <HiUser className="h-6 w-6 flex-shrink-0 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
+                    <IoDocumentsSharp className="h-6 w-6 flex-shrink-0 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
                     <span className="px-3 flex-1 whitespace-nowrap">
-                      Usuarios
+                      Ver archivos
                     </span>
                   </Link>
                 </li>
