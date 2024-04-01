@@ -50,7 +50,7 @@ function FileUpload() {
         <br />
         <div className="rounded-lg shadow-lg bg-gray-100 p-4">
           <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
-            <input type="file" onChange={archivoHandler} />
+            <input type="file" onChange={archivoHandler} accept=".m4a,.mp3,.mp4,.pdf,.doc,.docx,.xls,.xlsx,image/*,.ppt,.pptx,.jpg, .jpeg, .png, .gif, .bmp, .tiff, .svg"/>
             <input type="text" name="nombre" placeholder="Nombra tu archivo:" />
             <button type="submit" className="text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-full text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700">Subir</button>
           </form>

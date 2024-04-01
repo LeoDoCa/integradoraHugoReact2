@@ -14,6 +14,7 @@ import { IoDocumentSharp, IoDocumentsSharp } from "react-icons/io5";
 import Logo from "../../assets/google-docs.png";
 import AuthContext from "../../config/context/auth-context";
 import { useNavigate } from 'react-router-dom';
+import Usuario from '../../assets/img/usuario.png';
 
 const AdminLayout = () => {
   const { dispatch } = useContext(AuthContext);
@@ -43,15 +44,15 @@ const AdminLayout = () => {
               label={
                 <Avatar
                   alt="User settings"
-                  img="https://yt3.googleusercontent.com/D3BETNiOFmWFtmTQH5L-Y_rBSlb74iUcYzGePBapnR3Uo6HNxhOatMFA7NOvdkwztcUj4jzpyPA=s900-c-k-c0x00ffffff-no-rj"
+                  img={Usuario}
                   rounded
                 />
               }
             >
               <Dropdown.Header>
-                <span className="block text-sm">LeoDoCa</span>
+                <span className="block text-sm">Usuario admin</span>
                 <span className="block truncate text-sm font-medium">
-                  leodorcas12@gmail.com
+                  admin@gmail.com
                 </span>
               </Dropdown.Header>
               <Dropdown.Divider />
@@ -60,7 +61,7 @@ const AdminLayout = () => {
             <Navbar.Toggle />
           </div>
           <Navbar.Collapse>
-            <Navbar.Link href="#" active>
+            <Navbar.Link href="/" active>
               Home
             </Navbar.Link>
           </Navbar.Collapse>

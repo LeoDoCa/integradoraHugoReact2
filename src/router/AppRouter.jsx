@@ -21,7 +21,7 @@ const AppRouter = () => {
                             {
                                 // routesFromRole(user?.roles[0]?.name)
                             }
-                            <Route path='/' element={<>Dashboard</>} />
+                            <Route path='/' element={<DashboardPage/>} />
                             <Route path='upload' element={<DashboardPage/>} />
                             <Route path='docs' element={<ArchivosPage />} />
                         </Route>
