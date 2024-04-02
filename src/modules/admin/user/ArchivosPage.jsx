@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { app } from "../../../config/utils/firebaseConnection";
 import { doc } from "firebase/firestore";
+import Imagen from "../../../assets/img/archivos.png"
 
 
 export default function ArchivosPage() {
-  const [docus, setDocus] = useState([]);
+  const [docus, setDocus] = useState([]);  
+
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -46,7 +48,11 @@ export default function ArchivosPage() {
                   height="200px"
                   width="200px"
                   className="rounded-lg"
+                  onError={(e) => {
+                    e.target.src = Imagen;
+                  }}
                 />
+
                 <div className="font-bold text-lg mb-3 text-center mt-4">
                   <button
                     onClick={() => {
