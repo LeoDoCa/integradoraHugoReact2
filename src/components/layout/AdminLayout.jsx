@@ -15,6 +15,7 @@ import Logo from "../../assets/google-docs.png";
 import AuthContext from "../../config/context/auth-context";
 import { useNavigate } from 'react-router-dom';
 import Usuario from '../../assets/img/usuario.png';
+import { IoLogOut } from "react-icons/io5";
 
 const AdminLayout = () => {
   const { dispatch } = useContext(AuthContext);
@@ -95,12 +96,8 @@ const AdminLayout = () => {
                     </span>
                   </Link>
                 </li>
-                
-                <Sidebar.Item href="#" icon={HiArrowSmRight}>
-                  Sign In
-                </Sidebar.Item>
-                <Sidebar.Item href="#" icon={HiTable} onClick={handleLogout}>
-                  Sign Out
+                <Sidebar.Item href="#" icon={IoLogOut} onClick={handleLogout}>
+                  Cerrar sesión
                 </Sidebar.Item>
               </Sidebar.ItemGroup>
             </Sidebar.Items>

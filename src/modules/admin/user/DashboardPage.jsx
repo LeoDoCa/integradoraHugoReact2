@@ -1,6 +1,7 @@
 import React from "react";
 //import { uploadFile } from "../../../config/utils/firebaseConnection";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { app } from "../../../config/utils/firebaseConnection";
 
 function FileUpload() {
@@ -8,6 +9,7 @@ function FileUpload() {
   const [picture, setPicture] = useState(null);
   const [file, setFile] = useState(null);
   const [archivoUrl, setArchivoUrl] = useState("");
+  const navigate = useNavigate();
 
   const archivoHandler = async (e) => {
     const archivo = e.target.files[0];
@@ -36,12 +38,16 @@ function FileUpload() {
       const docu = await coleccionRef
         .doc(nombreArchivo)
         .set({ nombre: nombreArchivo, url: archivoUrl });
-      setMessage("Archivo subido exitosamente");
+      setMessage("¡Archivo subido exitosamente!");
       setPicture(archivoUrl);
     } catch (error) {
       console.log(error);
       alert("Hubo un error al subir el archivo");
     }
+  };
+
+  const handleRedirect = () => {
+    navigate("/docs", {replace: true});
   };
 
   return (
@@ -59,6 +65,9 @@ function FileUpload() {
         {message}
         <br />
         {picture && <img width="320" src={picture} alt="Uploaded" />}
+        {picture && (
+          <button onClick={handleRedirect} className="text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-full text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700">Ir a archivos</button>
+        )}
       </div>
     </>
   );
